@@ -1,0 +1,249 @@
+.header-sidebar{
+  .ant-menu-horizontal{ 
+    border-bottom:0
+  }
+}
+
+.ant-menu-submenu.ant-menu-submenu-popup {
+  .header-sidebar-popup{
+    position: absolute;
+    width: auto;
+  }
+}
+
+/*
+* bg mask
+*/
+.bg-mask-lighter:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to left,
+    fade(#ffffff, 0),
+    fade(#ffffff, 20)
+  );
+}
+
+.bg-mask-light:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to left,
+    fade(#ffffff, 0),
+    fade(#e0e0e0, 20)
+  );
+}
+
+.bg-mask-dark:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to left,
+    fade(#ffffff, 0),
+    fade(#5c5c5c, 50)
+  );
+}
+
+.bg-mask-dark-to-bottom:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to bottom,
+    fade(#ffffff, 0),
+    fade(#5c5c5c, 50)
+  );
+}
+
+.tab-1-0 {
+  *[data-panel] {
+    color: rgba(241, 103, 111, 1);
+    position: relative;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      left: 0;
+      bottom: -20px;
+      width: 0;
+      height: 4px;
+      background-color: #f1676f;
+      border-radius: 2px;
+      transition: all 0.3s;
+
+      @media screen and (min-width: 640px) {
+        bottom: -10px;
+      }
+    }
+
+    &.active {
+      color: rgba(241, 103, 111, 1);
+
+      &::after {
+        width: 100%;
+
+        @media screen and (min-width: 640px) {
+          width: 60px;
+        }
+      }
+    }
+  }
+}
+
+.accordion-1-0 {
+  *[data-panel] {
+    &.active {
+      color: #ffffff;
+      background-image: linear-gradient(to bottom, #061e36 0%, #000000 100%);
+    }
+  }
+}
+
+.accordion-3-4 {
+  *[data-panel] {
+    &.active {
+      background: #4991db;
+      color: #fff;
+    }
+  }
+}
+
+.vertical-dots {
+  & { 
+    right: -30px!important;;
+    height: 100%;
+    width: 20px!important;;
+    display: flex!important;;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &.slick-dots li {
+    display: block;
+  }
+}
+
+.slickArrows {
+  margin: 0 40px;
+  
+  .slick-arrow {
+    background-color: #00557c !important;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 50px;
+
+    position: absolute;
+    top: 50%;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-weight: bold;
+    color:  theme("colors.white"); 
+    outline:none;
+  }
+
+  .prev-arrow {
+    left: -20px;
+  }
+  
+  .next-arrow {
+    right: -20px;
+  }
+
+  .slick-arrow:hover {
+    background-color: #00557c;
+  }
+}
+
+.slick-disabled {
+  display: none !important;
+}
+
+/*
+** text shadow
+**/
+.text-shadow-black {
+  text-shadow: 1px 2px 0 #000;
+}
+
+.text-shadow-white {
+  text-shadow: 1px 2px 0 #fff;
+}
+
+// text indent
+.indent-2em {
+  text-indent: 2em;
+}
+
+.indent-4em {
+  text-indent: 4em;
+}
+
+// text mask
+.text-mask-black {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(43, 76, 90, 0) 0%,
+    rgba(43, 76, 90, 0.84) 100%
+  );
+
+  &.to-top {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(43, 76, 90, 0) 0%,
+      rgba(43, 76, 90, 0.84) 100%
+    );
+  }
+}
+
+.banner-text-mask {
+  &:before {
+    z-index: theme("zIndex.1");
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(3, 32, 77, 0) 0%,
+      rgba(3, 32, 77, 0.5) 100%
+    );
+  }
+}
+.spacing-slick {
+  /* the slides */
+  .slick-slide {
+    margin: 0 24px;
+  }
+  /* the parent */
+  .slick-list {
+    margin: 0 -24px;
+    padding-bottom: 20px;
+  }
+}

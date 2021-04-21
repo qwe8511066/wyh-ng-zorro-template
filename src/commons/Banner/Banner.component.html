@@ -1,0 +1,18 @@
+
+<section class="banner overflow-hidden">
+  <div class="media relative bg-center bg-no-repeat bg-cover"  
+  >
+    <img class="hidden md|block" src="{{ media }}" alt="">
+    <div class="left-0 right-0 top-1/2 transform -translate-y-1/2 absolute z-10 px-15 md|px-30">
+      <div class="container text-white">
+        <div class="md|mx-2/12">
+          <div class="text-2xl uppercase font-bold">{{ subTitle }}</div>
+       
+          <div class="text-h2 md|text-h1 uppercase font-bold" *ngFor="let title of titles">{{ title }}</div>
+     
+          <div class="text-lg mt-30 capitalize">{{ desc }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

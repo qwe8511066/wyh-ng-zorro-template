@@ -1,0 +1,43 @@
+
+<ul nz-menu [nzMode]="'horizontal'"  *ngIf="$list && $list.length>0" class="sidebar-nav">
+  <ng-template ngFor let-menuItem [ngForOf]="$list" let-mainMenuItemIndex="index">
+    <li *ngIf="!hasChildren(menuItem)&&!menuItem._hidden" nz-menu-item routerLinkActive="ant-menu-item-selected">
+      <a [routerLink]="[menuItem.path]">
+        <i nz-icon [nzIconfont]="menuItem.data.icon" *ngIf="menuItem.data.icon"></i>
+        <span>{{menuItem.data.title}}</span>
+      </a>
+    </li>
+    <li *ngIf="hasChildren(menuItem)&&!menuItem._hidden" nz-submenu  [nzMenuClassName]="'header-sidebar-popup'" [nzOpen]="menuItem._open">
+      <span title>
+        <i nz-icon [nzIconfont]="menuItem.data.icon" *ngIf="menuItem.data.icon"></i>
+        <span>{{menuItem.data.title}}</span>
+      </span>
+      <ul>
+        <ng-template ngFor let-subMenuItem [ngForOf]="menuItem.children" let-mainMenuItemIndex="index">
+          <li *ngIf="!hasChildren(subMenuItem)&&!subMenuItem._hidden" nz-menu-item routerLinkActive="ant-menu-item-selected">
+            <a [routerLink]="[subMenuItem.path]" >
+              <i nz-icon [nzIconfont]="subMenuItem.data.icon" *ngIf="subMenuItem.data.icon"></i>
+              <span>{{subMenuItem.data.title}}</span>
+            </a>
+          </li>
+          <li *ngIf="hasChildren(subMenuItem)&&!subMenuItem._hidden" nz-submenu  [nzMenuClassName]="'header-sidebar-popup'" [nzOpen]="menuItem._open">
+            <span title>
+              <i nz-icon [nzIconfont]="subMenuItem.data.icon" *ngIf="subMenuItem.data.icon"></i>
+              <span>{{subMenuItem.data.title}}</span>
+            </span>
+            <ul>
+              <ng-template ngFor let-subSubMenuItem [ngForOf]="subMenuItem.children" let-mainMenuItemIndex="index">
+                <li *ngIf="!hasChildren(subSubMenuItem)&&!subSubMenuItem._hidden" nz-menu-item routerLinkActive="ant-menu-item-selected">
+                  <a [routerLink]="[subSubMenuItem.path]">
+                    <i nz-icon [nzIconfont]="subMenuItem.data.icon" *ngIf="subMenuItem.data.icon"></i>
+                    <span>{{subSubMenuItem.data.title}}</span>
+                  </a>
+                </li>
+              </ng-template>
+            </ul>
+          </li>
+        </ng-template>
+      </ul>
+    </li>
+  </ng-template>
+</ul>
